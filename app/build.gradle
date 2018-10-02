@@ -29,10 +29,12 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-    implementation 'com.jakewharton:butterknife:8.8.1'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // This library is used to allow multiline in the collapsing toolbar
+    implementation 'net.opacapp:multiline-collapsingtoolbar:27.1.1'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

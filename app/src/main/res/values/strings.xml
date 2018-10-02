@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Movies</string>
+    <string name="title_activity_movie_detail">MovieDetail</string>
+
+    <string name="menu_popular">Most popular</string>
+    <string name="menu_top_rated">Top rated</string>
+
+    <string name="detail_average">VOTE AVERAGE:</string>
+    <string name="detail_release">RELEASE DATE:</string>
+    <string name="detail_description">DESCRIPTION:</string>
+
+    <string name="error_message">Failed to retrieve data</string>
+    <string name="action_retry">RETRY</string>
 </resources>

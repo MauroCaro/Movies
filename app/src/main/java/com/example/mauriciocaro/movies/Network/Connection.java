@@ -8,17 +8,20 @@ import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
+/**
+ * Class that create the instance of the retrofit in order the consume the service
+ *
+ * @author mauricio.caro
+ */
 public class Connection {
     private static Retrofit retrofit;
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
-
             OkHttpClient okHttpClient = new OkHttpClient().newBuilder().addInterceptor(chain -> {
                 Request original = chain.request();
                 HttpUrl requestBuilder = original.url().newBuilder()
-                        .addQueryParameter("api_key", "").build();
+                        .addQueryParameter(URL.QUERY_NAME_API, URL.API_KEY).build();
                 Request request = original.newBuilder().url(requestBuilder).build();
                 return chain.proceed(request);
             })

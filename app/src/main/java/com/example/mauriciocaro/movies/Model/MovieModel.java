@@ -4,6 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
+/**
+ * Model of the movie
+ *
+ * @author mauricio.caro
+ */
 public class MovieModel implements Serializable {
 
     @SerializedName("id")

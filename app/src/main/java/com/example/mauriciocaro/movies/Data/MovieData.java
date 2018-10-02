@@ -1,6 +1,5 @@
 package com.example.mauriciocaro.movies.Data;
 
-import android.util.Log;
 import com.example.mauriciocaro.movies.Activity.MainActivityView;
 import com.example.mauriciocaro.movies.Model.MovieRetrofit;
 import com.example.mauriciocaro.movies.Network.Connection;
@@ -10,7 +9,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+/**
+ * Class that fetch the information from the server and handle the response
+ *
+ * @author mauricio.caro
+ */
 public class MovieData {
     Service serviceConnection;
     MainActivityView listener;
@@ -25,12 +28,14 @@ public class MovieData {
         call.enqueue(new Callback<MovieRetrofit>() {
             @Override
             public void onResponse(Call<MovieRetrofit> call, Response<MovieRetrofit> response) {
-                listener.bindMovies(response.body().getResults());
+                if (response.body() != null) {
+                    listener.bindMovies(response.body().getResults());
+                }
             }
 
             @Override
             public void onFailure(Call<MovieRetrofit> call, Throwable t) {
-                Log.e("Error", "Error getting popular movie list from server.");
+                listener.errorServer();
             }
         });
     }
@@ -40,12 +45,14 @@ public class MovieData {
         call.enqueue(new Callback<MovieRetrofit>() {
             @Override
             public void onResponse(Call<MovieRetrofit> call, Response<MovieRetrofit> response) {
-                listener.bindMovies(response.body().getResults());
+                if (response.body() != null) {
+                    listener.bindMovies(response.body().getResults());
+                }
             }
 
             @Override
             public void onFailure(Call<MovieRetrofit> call, Throwable t) {
-                Log.e("Error", "Error getting top rated movie list from server.");
+                listener.errorServer();
             }
         });
     }

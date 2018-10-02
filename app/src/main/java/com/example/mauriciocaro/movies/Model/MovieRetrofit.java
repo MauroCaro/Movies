@@ -5,6 +5,11 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Model of the movie from the API server
+ *
+ * @author mauricio.caro
+ */
 public class MovieRetrofit implements Serializable {
 
     int page;
